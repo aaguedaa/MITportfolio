@@ -1,0 +1,125 @@
+:root {
+    --dark-bg-color: #1a1a1a;
+    --semi-transparent-black: rgba(0, 0, 0, 0.6);
+    --border-radius: 10px;
+    --profile-image-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Common Elements */
+body {
+    background-color: var(--dark-bg-color);
+}
+
+header, footer {
+    position: static;
+    width: 100%;
+    background-color: var(--semi-transparent-black);
+    border-radius: var(--border-radius);
+    z-index: 1000;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+
+/* Main Content */
+main {
+    text-align: center;
+}
+
+/* Images */
+main img, .profile-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 20px rgba(59, 58, 58, 0.3), 0 6px 6px rgba(113, 112, 112, 0.2);
+}
+
+main img {
+    min-height: calc(60vh - 100px);
+    padding: 2px;
+}
+
+.profile-image img {
+    width: 300px;
+    border-radius: 50%; /* Makes the profile image circular */
+    box-shadow: var(--profile-image-shadow);
+}
+
+/* Projects Section */
+.image-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers the images horizontally */
+    gap: 10px; /* Adds some space between images */
+}
+
+.smaller-image {
+    max-width: 30%; /* Adjust to control the size of each image */
+    min-height: auto; /* Override the min-height for these specific images */
+}
+
+/* About Section */
+.about-section {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    background-image: url("images/aboutBG.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.about-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Text Content */
+.text-content {
+    background-color: var(--semi-transparent-black);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Spacer */
+.section-spacer {
+    height: 20px;
+}
+
+.section-spacer::before {
+    display: block;
+    content: "";
+}
+
+/* Common to All Pages */
+.container {
+    width: 100%;
+}
