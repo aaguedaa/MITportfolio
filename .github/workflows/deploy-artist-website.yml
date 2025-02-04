@@ -16,9 +16,10 @@ jobs:
       uses: calibreapp/image-actions@main
       with:
         githubToken: ${{ secrets.GITHUB_TOKEN }}
-        optimizeOnly: true
         jpegQuality: 80
         pngQuality: 80
+        compressOnly: true
+        runForAll: true
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
